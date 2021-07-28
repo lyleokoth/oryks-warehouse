@@ -8,13 +8,13 @@
     <xacro:include filename="$(find agv_description)/urdf/gazebo_properties.xacro"/>
     <xacro:include filename="$(find agv_description)/urdf/gazebo_physics.xacro"/>
 
-  <link name="base_footprint" />
+  <!--link name="base_footprint" />
 
   <joint name="fixed" type="fixed">
       <parent link="base_footprint"/>
       <child link="base_link"/>
       <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
-  </joint>
+  </joint-->
     
   
   <link name="base_link">

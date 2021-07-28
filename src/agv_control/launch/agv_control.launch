@@ -1,0 +1,5 @@
+<?xml version="1.0"?>
+<launch>
+    <include file="$(find agv_description)/launch/gazebo.launch" />
+    <include file="$(find agv_control)/launch/agv_joy.launch" />
+</launch>

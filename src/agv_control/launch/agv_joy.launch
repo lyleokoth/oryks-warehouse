@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<launch>
+    <node pkg="agv_control" type="agv_joy.py" name="agv_joy" />
+        
+    <node pkg="joy" type="joy_node" name="joy_node" />
+</launch>
