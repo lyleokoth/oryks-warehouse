@@ -1,0 +1,7 @@
+digraph G {
+"map" -> "base_link"[label=" Broadcaster: /gazebo\nAverage rate: 591.017\nBuffer length: 5.032\nMost recent transform: 1627457045.732\nOldest transform: 1627457040.7\n"];
+edge [style=invis];
+ subgraph cluster_legend { style=bold; color=black; label ="view_frames Result";
+"Recorded at time: 1627457045.7395613"[ shape=plaintext ] ;
+}->"map";
+}
