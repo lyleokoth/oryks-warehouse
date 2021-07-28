@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<launch>
+
+    <!-- URDF file for the mobile manipulator -->
+    <arg name="model" default="$(find agv_description)/urdf/agv.xacro"/>
+    <param name="robot_description" command="$(find xacro)/xacro $(arg model)"/>  
+ 
+    <!-- Gazebo post office environment -->
+    <include file="$(find gazebo_ros)/launch/empty_world.launch">
+        <!--arg name="world_name" value="/home/focalfossa/catkin_ws/src/mobile_manipulator/worlds/postoffice.world"/-->
+        <arg name="world_name" value="$(find agv_gazebo)/worlds/post_office.world"/>
+        <arg name="debug" value="false" />
+        <arg name="gui" value="true" />
+        <arg name="paused" value="false"/>
+        <arg name="use_sim_time" value="false"/>
+        <arg name="headless" value="false"/>
+        <arg name="verbose" value="true"/>
+    </include>
+
+    <!--Launch Gazebo Simulator-->
+    <node name="spawn_model" pkg="gazebo_ros" type="spawn_model" 
+    args="-urdf -param robot_description -model agv" output="screen"/>
+
+    <rosparam command="load" file="$(find agv_description)/config/control.yaml" />
+    <node name="base_controller_spawner" pkg="controller_manager" 
+      type="spawner" args="robot_base_joint_publisher robot_base_velocity_controller"/>
+
+</launch>
