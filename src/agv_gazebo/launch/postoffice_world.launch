@@ -17,6 +17,9 @@
         <arg name="verbose" value="true"/>
     </include>
 
+    <node name="robot_state_publisher" pkg="robot_state_publisher" 
+    type="robot_state_publisher"/>
+
     <!--Launch Gazebo Simulator-->
     <node name="spawn_model" pkg="gazebo_ros" type="spawn_model" 
     args="-urdf -param robot_description -model agv" output="screen"/>

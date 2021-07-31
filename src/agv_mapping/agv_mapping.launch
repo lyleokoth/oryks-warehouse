@@ -1,6 +1,0 @@
-<?xml version="1.0"?>
-<launch>
-    <include file="$(find agv_gazebo)/launch/postoffice_world.launch" />
-    <include file="$(find agv_control)/launch/agv_joy.launch" />
-    <include file="$(find hector_slam_launch)/launch/tutorial.launch" />
-</launch>
